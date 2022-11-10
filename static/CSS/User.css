@@ -1,0 +1,340 @@
+:root{
+    /*color*/
+    --color-primary:#ee5253;
+    --color-secondary:#636e72;
+    --color-text-navbar:#353b48;
+    --color-light:#f4f4f4;
+
+    /*font*/
+    --font-primary:'Opne Sans',Helvetica,Arial,sans-serif;
+    --font-bold:700;
+    --font-light:400;
+    --font-size-text:25px;
+    /*size*/
+    --size-primary:25px;
+    --paddin-primary:var(--size-primary);
+    --size-double:calc(var(--size-primary)*2);
+    --size-half:calc(var(--size-primary)/2);
+
+
+
+    --margin-navbar:12px;
+    --padding-navbar:5px;
+
+    /*size*/
+    --height-primary:120px ;
+
+
+
+}
+#logoimg{
+    width: 50px;
+    border-radius: 50px;
+}
+.navbar .air-nav-link.nav-link{
+    border-radius: 5px;
+    color: var(--color-text-navbar);
+    margin: var(--margin-navbar);
+    padding: var(--padding-navbar);
+}
+
+
+
+.item{
+    align-items: center;
+    height: 400px;
+    justify-content: center;
+    display: flex;
+
+}
+.search-from{
+    opacity: .9;
+    background-color:#FFFF;
+
+    height: 150px;
+    border-radius: 5px;
+
+    padding: 50px;
+    margin-left: 60px;
+
+}
+
+
+ i{
+    font-size: var(--font-size-text);
+    color: #74b9ff;
+    position: absolute;
+    margin: 10px 10px 10px 10px;
+
+}
+.btn-warning{
+    color: #FFFF;
+}
+.btn-warning:hover{
+    color: #FFFF;
+}
+
+section{
+    padding: var(--size-double) 0;
+    position: relative;
+}
+a{
+    color: #2ed573;
+}
+.section-color{
+    background-color: var(--color-primary);
+    color: white;
+}
+.section-title{
+    font-size: var(--font-size-text);
+}
+.btn-white{
+    border: 2px solid white;
+    padding:5px;
+    width: 280px;
+    color: aqua;
+
+
+}
+.section-down-arrow{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 340px;
+
+}
+.article{
+    text-align: center;
+    margin-top: var(--size-double);
+    padding: var(--paddin-primary);
+    transition: all .2s ease-in;
+
+
+}
+.article:hover{
+   scale: 1.1;
+   box-shadow: 0 0 6.5px var(--color-secondary);
+}
+.article .article-icon{
+   font-size: 4rem;
+   margin-bottom: 70px;
+   margin-left: -20px;
+
+}
+.star-places{
+    background-color:#ffffff;
+    border-radius: 5px;
+}
+.star-place-header{
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--paddin-primary);
+    border-radius: 5px;
+
+}
+.star-place-header h3{
+    font-size: var(--font-size-text);
+    font-weight: var(--font-light);
+}
+.star-place-header p{
+    font-size: 14px;
+    margin: 0;
+}
+.start-place-body{
+    padding: var(--paddin-primary);
+}
+.start-place-body a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--size-primary);
+    background-color:#f1f2f6;
+    border-radius: 5px;
+    color: #2f3542;
+    margin-bottom: var(--size-primary);
+}
+.modalitme{
+    width: 920px;
+    margin-left: -150px;
+}
+
+.footer-distributed{
+	background: var(--color-primary);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+    font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color: var(--color-primary);
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+    margin:14px ;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+    font-weight:400;
+	vertical-align: middle;
+	margin-left:150px;
+    margin-top:10px ;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #ffffff;
+	text-decoration: none;;
+    font-size: 25px;
+}
+
+
+
+.footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+      width: 20%;
+  }
+  
+  .footer-distributed .footer-company-about{
+      line-height: 20px;
+      color:  #2d3436;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+      display: block;
+      color:  #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-left: 25px;
+  }
+  
+  .footer-distributed .footer-icons{
+      margin-top: 25px;
+
+  }
+  
+  .footer-distributed .footer-icons a{
+      display:inline-flex;
+     
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color:  #2d3436;
+      border-radius: 2px;
+  
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+  
+      margin-right: 3px;
+      margin-bottom: 5px;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-google {
+    background: #39dd78;
+    color: white;
+  }

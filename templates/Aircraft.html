@@ -1,0 +1,95 @@
+{%extends 'PageAdmin.html'%}
+{%block body%}
+<div class="continer">
+    <div class="row">
+        <div class="col">
+             {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            {%if category=="Confirm"%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+            {%else%}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+        {%endif%}
+        {% endfor %}
+
+      {% endif %}
+    {% endwith %}
+
+            <form action="/AddAircraft" method="post">
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">NameAriport</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="NameAirport" name="Airport" required>
+              </div>
+
+                <div class="form-group">
+                <label for="exampleInputPassword1">FirstClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="FirstClass" name="FirstClass" required>
+              </div>
+
+                 <div class="form-group">
+                <label for="exampleInputPassword1">economyClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="economyClass" name="economyClass" required>
+              </div>
+
+                 <div class="form-group">
+                <label for="exampleInputPassword1">BusinessClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="BusinessClass" name="BusinessClass" required>
+              </div>
+                <br>
+
+
+
+              <button type="submit" class="btn btn-primary form-control">ADD</button>
+            </form>
+        </div>
+        <div class="col">
+            <table class="table table-hover bg-white">
+                  <thead>
+                    <tr>
+                         <th scope="col">id</th>
+                      <th scope="col">NameAriport</th>
+                      <th scope="col">FirstClass</th>
+                      <th scope="col">economyClass</th>
+                      <th scope="col">BusinessClass</th>
+                      <center><th scope="col" colspan="4">Action</th></center>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {%for data in dataAircraft%}
+                                <tr class="text-center">
+                                     <td>{{data.0}}</td>
+                                     <td>{{data.1}}</td>
+                                     <td>{{data.2}}</td>
+                                     <td>{{data.3}}</td>
+                                     <td>{{data.4}}</td>
+                                     <td colspan="2">
+                                         <a href="/DeleteAircraft/{{data.0}}" class="btn btn-danger">clear</a>
+
+                                     </td>
+                                      <td>
+                                          <a href = "/EditAircraft/{{data.0}}" class=" btn btn-info">Edit</a>
+                                      </td>
+
+                                </tr>
+                     {%endfor%}
+                    </tr>
+
+                  </tbody>
+            </table>
+
+
+</div>
+
+        </div>
+    </div>
+</div>
+{%endblock%}

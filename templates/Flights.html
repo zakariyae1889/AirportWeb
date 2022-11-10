@@ -1,0 +1,120 @@
+{%extends 'PageAdmin.html'%}
+{%block body%}
+<div class="continer">
+    <div class="row">
+        <div class="col">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          {% for category, message in messages %}
+          {%if category=="Confirm"%}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+          {%else%}
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+      {%endif%}
+      {% endfor %}
+
+    {% endif %}
+  {% endwith %}
+            <form action="/AddFlights" method="post">
+             
+              <div class="form-group">
+                <label for="exampleInputPassword1">DepartureTime</label>
+                <input type="time" class="form-control" id="exampleInputPassword1" placeholder="DepartureTime" name="DepartureTime">
+              </div>
+
+                <div class="form-group">
+                <label for="exampleInputPassword1">ArrivalTime</label>
+                <input type="time" class="form-control" id="exampleInputPassword1" placeholder="ArrivalTime" name="ArrivalTime">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">PrixFlight</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="PrixFlight" name="PrixFlight">
+              </div>
+
+              
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Seat</label>
+                <input type="number" class="form-control" min="0" id="exampleInputPassword1" placeholder="Seat" name="Seat">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Flight</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Flight" name="Flight">
+              </div>
+
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">AircraftID</label>
+                    <select class="form-select" multiple aria-label="multiple select example" name="AircraftID">
+                      {%for air in all_air %}
+                         <option >{{air}}</option>
+                      {% endfor %}
+
+                    </select>
+                 </div>
+                <div class="form-group">
+                        <label for="exampleInputPassword1">SectorID</label>
+
+                        <select class="form-select" multiple aria-label="multiple select example" name="SectorID">
+                          {%for sector in all_sector %}
+                          <option >{{sector}}</option>
+                          {% endfor %}
+
+                        </select>
+              </div>
+
+                
+                <br>
+
+
+
+              <button type="submit" class="btn btn-primary form-control">ADD</button>
+            </form>
+        </div>
+        <div class="col">
+            <table class=" table table-hover text-center bg-white ">
+                  <thead>
+                    <tr>
+                      <th scope="col">idFlight</th>
+                      <th scope="col">DeparturTime</th>
+                      <th scope="col">ArrivaleTime</th>
+                      <th scope="col">Prix</th>
+                     
+                      <th scope="col">Seat</th>
+                      <th scope="col">Flight</th>
+
+                      
+                      <center><th scope="col" colspan="2">Action</th></center>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for all_Flight_data in all_Flight %}
+                    <tr>
+                      
+                      <td>{{all_Flight_data.0}}</td>
+                      <td>{{all_Flight_data.1}}</td>
+                      <td>{{all_Flight_data.2}}</td>
+                      <td>{{all_Flight_data.3}}</td>
+                      <td>{{all_Flight_data.4}}</td>
+                      <td>{{all_Flight_data.5}}</td>
+                      
+                      
+                      <td><a href="/DeleteFlights/{{all_Flight_data.0}}" class="btn btn-danger">clear</a></td>
+                      <td><a href="/EditFlights/{{all_Flight_data.0}}" class="btn btn-info">Edit</a></td>
+
+                    </tr>
+                    {%endfor %}
+
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

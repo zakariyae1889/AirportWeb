@@ -1,0 +1,67 @@
+{%extends 'PageAdmin.html'%}
+{%block body%}
+<div class="continer">
+    <div class="row">
+        <div class="col">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          {% for category, message in messages %}
+          {%if category=="Confirm"%}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+          {%else%}
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+      {%endif%}
+      {% endfor %}
+
+    {% endif %}
+  {% endwith %}
+            <form action="/UpdateSchedule/{{dataSchedule.0}}" method="post">
+              
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">idFlight</label>
+                    <div class="row">
+
+                        <div class="col">
+
+                            <select class="form-select" multiple aria-label="multiple select example" name="idFlight">
+                              {% for item in data_Flight  %}
+                               <option >{{item}}</option>
+                              {% endfor %}
+                              
+
+                            </select>
+                        </div>
+                        
+                    </div>
+
+
+
+
+
+
+
+                </div>
+                <div class="form-group">
+                <label for="exampleInputEmail1">FlightDate</label>
+                <input type="Date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="FlightDate" name="FlightDate" value="{{dataSchedule.2}}">
+
+              </div>
+
+
+                
+                <br>
+                <br>
+            <button type="submit" class="btn btn-warning form-control">Update</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
+{%endblock%}

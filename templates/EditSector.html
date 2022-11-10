@@ -1,0 +1,89 @@
+{%extends 'PageAdmin.html'%}
+{%block body%}
+<div class="continer">
+    <div class="row">
+        <div class="col">
+             {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            {%if category=="Confirm"%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+            {%else%}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+        {%endif%}
+        {% endfor %}
+
+      {% endif %}
+    {% endwith %}
+
+            <form action="/UpdateSector/{{data.0}}" method="post">
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Source</label>
+
+                  <select class="form-select" multiple   name="Source_" >
+                    
+                    
+                    {%for Source in listCountry%}
+                      <option  >{{Source}}</option>
+                    {%endfor%}
+
+                </select>
+              </div>
+              <label for="exampleInputPassword1">Destination</label>
+                <div class="form-group">
+                  
+                  <select class="form-select"   multiple name="Destination" >
+
+                    {%for Destination in listCountry%}
+                      <option >{{Destination}}</option>
+                    {%endfor%}
+
+                </select>
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">WeekDay</label>
+              <select class="form-select" multiple  name="WeekDay" >
+
+                {%for WeekDay in listDay%}
+                  <option>{{WeekDay}}</option>
+                {%endfor%}
+
+            </select>
+          </div>
+
+                <div class="form-group">
+                <label for="exampleInputPassword1">FirstClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="FirstClass"  name="FirstClass"    value="{{data.4}}">
+              </div>
+
+                 <div class="form-group">
+                <label for="exampleInputPassword1">economyClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="economyClass" name="EconomyClass" value="{{data.5}}">
+              </div>
+
+                 <div class="form-group">
+                <label for="exampleInputPassword1">BusinessClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="BusinessClass" name="BusinessClass" value="{{data.6}}">
+              </div>
+                <br>
+
+
+
+              <button type="submit" class="btn btn-warning form-control">Update</button>
+            </form>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,110 @@
+{%extends 'PageAdmin.html'%}
+{%block body%}
+<div class="continer">
+    <div class="row">
+        <div class="col">
+            <form action="/AddSector" method="post">
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Source</label>
+                <select class="form-select" multiple aria-label="multiple select example" required name="Source">
+                       {%for item in listCountry%}
+                      <option>{{item}}</option>
+                    {%endfor%}
+
+                </select>
+              </div>
+
+                <div class="form-group">
+                <label for="exampleInputPassword1">Destination</label>
+                <select class="form-select" multiple aria-label="multiple select example" required name="Destination">
+                    {%for item in listCountry%}
+                      <option >{{item}}</option>
+                    {%endfor%}
+
+                </select>
+
+              </div>
+                 <div class="form-group">
+                <label for="exampleInputPassword1">WeekDay</label>
+                <select class="form-select" multiple aria-label="multiple select example" required name="WeekDay">
+                      {%for day in listDay%}
+                      <option >{{day}}</option>
+                    {%endfor%}
+
+                </select>
+                     <br>
+                     <br>
+
+              </div>
+                <div class="card" style="width: 18rem;">
+
+                  <div class="card-body">
+                      <h5 class="card-title">Fares</h5>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">FirstClass</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="FirstClass" required name="FirstClass">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">economyClass</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="economyClass" required name="EconomyClass">
+                      </div>
+
+                         <div class="form-group">
+                        <label for="exampleInputPassword1">BusinessClass</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="BusinessClass" required name="BusinessClass">
+                   </div>
+
+
+                  </div>
+                </div>
+
+
+
+                <br>
+
+
+
+              <button type="submit" class="btn btn-primary form-control">ADD</button>
+            </form>
+        </div>
+        <div class="col">
+             <table class="table bg-white rounded shadow-sm  table-hover text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col" width="50">idSector</th>
+                                    <th scope="col">Source</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">WeekDay</th>
+                                    <th scope="col">FirstClass</th>
+                                    <th scope="col">EconomyClass</th>
+                                    <th scope="col">BusinessClass</th>
+                                    <th COLSPAN="3">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                               {%for data1 in dataSector %}
+                                <tr>
+
+                                    <td>{{data1.0}}</td>
+                                    <td>{{data1.1}}</td>
+                                    <td>{{data1.2}}</td>
+                                    <td>{{data1.3}}</td>
+                                    <td>{{data1.4}}</td>
+                                    <td>{{data1.5}}</td>
+                                     <td>{{data1.6}}</td>
+                                     <td colspan="2"><a href="/DeleteSector/{{data1.0}}" class="btn btn-danger">Clear</a>
+
+
+
+                                     </td>
+                                    <td> <a href="/EditSector/{{data1.0}}" class="btn btn-info">Edit</a></td>
+                                </tr>
+                               {%endfor%}
+
+                            </tbody>
+                        </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

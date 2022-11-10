@@ -1,0 +1,58 @@
+{%extends 'PageAdmin.html'%}
+{%block body%}
+<div class="continer">
+    <div class="row">
+        <div class="col">
+             {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            {%if category=="Confirm"%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+            {%else%}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+        {%endif%}
+        {% endfor %}
+
+      {% endif %}
+    {% endwith %}
+
+            <form action="/updateAircraft/{{data.0}}" method="post">
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">NameAriport</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="NameAirport" name="Airport" required value="{{data.1}}">
+              </div>
+
+                <div class="form-group">
+                <label for="exampleInputPassword1">FirstClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="FirstClass" name="FirstClass" required value="{{data.2}}">
+              </div>
+
+                 <div class="form-group">
+                <label for="exampleInputPassword1">economyClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="economyClass" name="economyClass" required value="{{data.3}}">
+              </div>
+
+                 <div class="form-group">
+                <label for="exampleInputPassword1">BusinessClass</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="BusinessClass" name="BusinessClass" required value="{{data.4}}">
+              </div>
+                <br>
+
+
+
+              <button type="submit" class="btn btn-warning form-control">Update</button>
+            </form>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+{%endblock%}

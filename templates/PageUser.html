@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/User.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="{{url_for('static',filename='image/logo.jpg')}}" id="logoimg" alt="logo" srcset="">
+            <span>Airline</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto ">
+              <a class="air-nav-link nav-link active text-center" aria-current="page" href="#">Home</a>
+              
+              <a class="air-nav-link nav-link text-center" href="/SingUp">Contacte</a>
+              <a class="air-nav-link nav-link text-center" href="/logout">logout</a>
+              <a class="air-nav-link nav-link text-center   text-success" href="#">{{Email}}</a>
+
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!--Hero-->
+    <header>
+        <div class="card bg-dark text-white">
+            <img src="{{url_for('static',filename='image/chuttersnap-mytSmcgVHRE-unsplash.jpg')}}" class="card-img" alt="..." width="450" height="450">
+            <div class="card-img-overlay">
+                <div class="item">
+                        <div class="container">
+                            <form action="/SearchFlight"   class="search-from">
+                                <div class="row">
+
+
+                                      <center>
+                                        <div class="col">
+
+                                          <button type="button" class="btn btn-outline-danger form-control" data-bs-toggle="modal" data-bs-target="#myModal">
+                                            SearchFlight
+                                          </button>
+                                        </div>
+
+                                      </center>
+
+                                      
+
+
+
+                                  </div>
+
+
+
+                            </form>
+                        </div>
+
+                </div>
+
+
+
+
+            </div>
+          </div>
+    </header>
+
+    <section class="section-color">
+        <div class="container text-center">
+            <h2 class="section-title">We are here to help you</h2>
+
+            <p class="section-title">Lorem ipsum </p>
+            <a href="" class="btn btn-white text-center">Subscribe</a>
+        </div>
+    </section>
+    <section>
+     <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="section-down-arrow">
+
+        <polygon fill="var(--color-primary)" points="0,0 100,0 50,50" > </polygon>
+
+     </svg>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+
+            <article class="article col-lg-4">
+             <i href="" class="fa fa-legal article-icon" ></i>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h3 class="article-title ">CSS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aspernatur ut esse accusantium alias voluptatibus hic consequuntur id, aliquam laborum. Sunt dolorem distinctio eos aliquam facere quas, optio doloremque voluptatem.</p>
+                <a href="" class="btn btn-primary">ContinueREADING</a>
+
+            </article>
+            <article class="article col-lg-4">
+                <i href="" class="fa fa-plane article-icon" ></i>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h3 class="article-title ">JS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aspernatur ut esse accusantium alias voluptatibus hic consequuntur id, aliquam laborum. Sunt dolorem distinctio eos aliquam facere quas, optio doloremque voluptatem.</p>
+                <a href="" class="btn btn-primary">ContinueREADING</a>
+
+            </article>
+            <article class="article col-lg-4">
+                <i href="" class="fa fa-life-saver article-icon" ></i>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h3 class="article-title ">Html</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aspernatur ut esse accusantium alias voluptatibus hic consequuntur id, aliquam laborum. Sunt dolorem distinctio eos aliquam facere quas, optio doloremque voluptatem.</p>
+                <a href="" class="btn btn-primary">ContinueREADING</a>
+
+            </article>
+
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    <section class="section-gray">
+      <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src=  "{{url_for('static',filename='image/jeshoots-com-mSESwdMZr-A-unsplash.jpg')}}"  class="d-block w-100 " width="450" height="450" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{{url_for('static',filename='image/yousef-alfuhigi-bMIlyKZHKMY-unsplash.jpg')}}" class="d-block w-100 " width="450" height="450" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{{url_for('static',filename='image/marco-lopez-qK6HAkB91Yc-unsplash.jpg')}}" class="d-block w-100" width="450" height="450" alt="...">
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{url_for('static',filename='image/img1.jpg')}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="" class="btn btn-danger form-control">View More Info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{url_for('static',filename='image/img2.jpg')}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="" class="btn btn-danger form-control">View More Info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{url_for('static',filename='image/img3.jpg')}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="" class="btn btn-danger form-control">View More Info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{url_for('static',filename='image/img4.jpg')}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="" class="btn btn-danger form-control">View More Info</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+      </div>
+    </section>
+    <footer id="myFooter " class="bg-danger">
+      <div class=" text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+          <h1 class="display-5 fw-bold text-white">Create By<strong >AbbihZakariyae</strong> </h1>
+          <h3 class="display-5 fw-bold text-dark">Abbih1889@gmail.com</h3>
+          <div class="col-lg-6 mx-auto">
+            <p class="fs-5 mb-4 text-white">
+              Company Airline © 2022
+      
+            </p>
+
+            
+
+
+
+
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <a href="#" class="fa fa-facebook "></a>
+              <a href="#" class="fa fa-google "></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </footer>
+   
+
+      <div class="modal" id="myModal">
+
+        <div class="modal-dialog">
+          <center>
+            <div class="modal-content modalitme">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Flight</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+        
+              <!-- Modal body -->
+              <div class="modal-body" >
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <table class="table text-center">
+                        <thead>
+                          <tr>
+                            <th scope="col">FlightDate</th>
+                            <th scope="col">DepartureTime</th>
+                            <th scope="col">ArrivalTime</th>
+                            <th scope="col">PrixFlight</th>
+                            <th scope="col">Seat</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">NameAirport</th>
+                            <th scope="col">Reservation</th>
+                          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {%for Flight in Search %}
+                          <tr>
+                            
+                            <td>{{Flight.0}}</td>
+                            <td>{{Flight.1}}</td>
+                            <td>{{Flight.2}}</td>
+                            <td>{{Flight.3}}</td>
+                            <td>{{Flight.4}}</td>
+                            <td>{{Flight.5}}</td>
+                            <td>{{Flight.6}}</td>
+                            <td>{{Flight.7}}</td>
+                            <td><a href="" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservation</a></td>
+                            
+                          </tr>
+                          {%endfor%}
+                        
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+        
+            </div>
+          </center>
+          
+        </div>
+      </div>
+
+     
+
+     
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+            
+              <h5 class="modal-title" id="exampleModalLabel">
+
+                
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             
+              <form action="/Resrvation" method="post">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">NumberPlace:</label>
+                  <input type="number" min="0"  class="form-control" id="recipient-name" name="NumberPlace" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">DateResrvation:</label>
+                  <input type="date" class="form-control" id="recipient-name" name="DateResrvation" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Class</label>
+                  <select class="form-select"  required name="Placeclass" required>
+                    {%for item in ClassPlace%}
+                   <option>{{item}}</option>
+                 {%endfor%}
+
+             </select>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >
+                    cancellation of reservation</button>
+                  <input type="submit" class="btn btn-success" value="Reservation" >
+                </div>
+                
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+
+
+
+   
+
+
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.1.js" ></script>
+      <script src="./assets/main.js"></script>
+  </body>
+</html>

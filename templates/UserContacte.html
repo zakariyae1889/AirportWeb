@@ -1,0 +1,33 @@
+{%extends 'PageAdmin.html'%}
+{%block body%}
+<div class="continer">
+    <div class="row">
+
+        <div class="col">
+            <table class="table table-hover  bg-white text-center">
+                  <thead>
+                    <tr>
+                      <th scope="col">IDUser</th>
+                      <th scope="col">FullName</th>
+                      <th scope="col">Email</th>
+                      
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for data in data_passanger %}
+                    
+                    <tr>
+                      <td>{{data.0}}</td>
+                      <td>{{data.1}}</td>
+                      <td>{{data.2}}</td>
+                      
+                      <td> <a href="/DeleteUserConnect/{{data.0}}" class="btn btn-danger">clear</a></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}
